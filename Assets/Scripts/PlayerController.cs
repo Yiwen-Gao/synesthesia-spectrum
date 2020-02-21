@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-	public float speed = 50;
+	public float speed = 20;
 	private Rigidbody rb;
 
     // Start is called before the first frame update
@@ -22,5 +22,15 @@ public class PlayerController : MonoBehaviour {
     	float verticalInput = Input.GetAxis("Vertical");
     	Vector3 movement = new Vector3(horizontalInput, 0.0f, verticalInput);
     	rb.AddForce(movement * speed);
+
+       
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            Physics.gravity = new Vector3(-1.0f, 0, 0);
+        }
     }
 }
