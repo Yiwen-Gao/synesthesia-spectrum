@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Wall"))
         {
-            Physics.gravity = new Vector3(-1.0f, 0, 0);
+            Physics.gravity = new Vector3(-9.8f, 0, 0);
         }
     }
 }
