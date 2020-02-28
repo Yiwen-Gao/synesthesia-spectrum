@@ -31,7 +31,8 @@ public class WallVictoryCondition : MonoBehaviour
          * Reference video https://youtu.be/VbZ9_C4-Qbo?t=481
          * */
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.GetActiveScene().name (restarts current scene)
+        SceneManager.LoadScene("VictoryScene");
         
     }
 }
