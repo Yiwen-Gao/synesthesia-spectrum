@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using System;
 
 public class NetworkClient : MonoBehaviour
 {
@@ -14,33 +15,63 @@ public class NetworkClient : MonoBehaviour
     private TcpClient client = null;
     private NetworkStream stream = null;
 
+    private Dictionary<string, Action<string>> callbacks;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
         if (FindObjectsOfType<NetworkClient>().Length > 1)
         {
             Destroy(this.gameObject);
         }
         else
         {
+            DontDestroyOnLoad(this.gameObject);
+            callbacks = new Dictionary<string, Action<string>>();
             messageBuilder = new StringBuilder();
             AttemptConnection();
         }
     }
 
-    public void SendMessageNetwork(string message)
+    public void SendMessageNetwork(string message, string argument="")
     {
         try
         {
-            message += "!";
-            byte[] data = System.Text.Encoding.ASCII.GetBytes(message);
+            byte[] data = System.Text.Encoding.ASCII.GetBytes(message + ":" + argument + "!");
             stream.Write(data, 0, data.Length);
         }
         catch (SocketException e)
         {
             Debug.LogException(e, this);
         }
+    }
+
+    private void ReceiveMessageNetwork(string message)
+    {
+        string[] messages = message.Split(':');
+        if (callbacks.ContainsKey(messages[0]))
+        {
+            try
+            {
+                if (messages.Length >= 2)
+                {
+                    callbacks[messages[0]].DynamicInvoke(messages[1]);
+                }
+                else
+                {
+                    callbacks[messages[0]].DynamicInvoke("");
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e);
+            }
+        }
+    }
+
+    public void RegisterCallback(string name, Action<string> func)
+    {
+        callbacks[name] = func;
     }
 
     private void AttemptConnection()
@@ -80,7 +111,8 @@ public class NetworkClient : MonoBehaviour
                 if (messageBuilder.ToString().EndsWith("!"))
                 {
                     messageBuilder.Length--;
-                    Debug.Log(messageBuilder);
+                    Debug.Log("Received a message: " + messageBuilder);
+                    ReceiveMessageNetwork(messageBuilder.ToString());
                     messageBuilder = new StringBuilder();
                 }
             }
