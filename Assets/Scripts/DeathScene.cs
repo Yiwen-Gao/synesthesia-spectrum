@@ -15,7 +15,7 @@ public class DeathScene : MonoBehaviour
         {
             //CMD line prompt when Player object collides with wall
             Debug.Log("Game Over, you lost!");
-            FindObjectOfType<NetworkClient>().SendMessageNetwork("I died");
+            FindObjectOfType<NetworkClient>().SendMessageNetwork("died", "name");
 
             //Restart the game
             //"Restart" is the method, and restartDelay will delay the method by restartDelay seconds.
