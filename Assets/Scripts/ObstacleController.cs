@@ -5,18 +5,17 @@ using UnityEngine;
 public class ObstacleController : MonoBehaviour {
 
 	public float speed;
-	private float dir;
-	public float offsetZ;
+    public Vector3 dir;
+	private float offset;
 
     // Start is called before the first frame update
     void Start() {
-        dir = 1;
+        offset = .1f;
     }
 
     // Update is called once per frame
     void Update() {
-    	Vector3 offset = new Vector3(0f, 0f, dir * offsetZ);
-        transform.position += offset;
+        transform.position += offset * dir;
     }
 
     void OnCollisionEnter(Collision other) {
