@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   port: 13000
-  serverAddr: 127.0.0.1
+  serverAddr: 104.175.171.88
 --- !u!1001 &390081324
 PrefabInstance:
   m_ObjectHideFlags: 0
