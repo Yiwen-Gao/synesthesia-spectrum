@@ -10,12 +10,16 @@ public class MapMover : MonoBehaviour {
     public float rotationSpeed = 1.5f;
 
     void Start() {
-        FindObjectOfType<NetworkClient>().RegisterCallback("rotate", (string rotation) =>
+        NetworkClient client = FindObjectOfType<NetworkClient>();
+        if (client != null)
         {
-            string[] anglesList = rotation.Split(',');
-            Vector3 byAngles = new Vector3(float.Parse(anglesList[0]), float.Parse(anglesList[1]), float.Parse(anglesList[2]));
-            StartCoroutine(RotateMe(byAngles, rotationSpeed));
-        });
+            FindObjectOfType<NetworkClient>().RegisterCallback("rotate", (string rotation) =>
+            {
+                string[] anglesList = rotation.Split(',');
+                Vector3 byAngles = new Vector3(float.Parse(anglesList[0]), float.Parse(anglesList[1]), float.Parse(anglesList[2]));
+                StartCoroutine(RotateMe(byAngles, rotationSpeed));
+            });
+        }
         Map = GameObject.Find("Map");
         currentPosition = 0;
     }
@@ -75,7 +79,11 @@ public class MapMover : MonoBehaviour {
 
     void SendMessageAndRotate(Vector3 byAngles, float inTime)
     {
-        FindObjectOfType<NetworkClient>().SendMessageNetwork("rotate", byAngles[0] + "," + byAngles[1] + "," + byAngles[2]);
+        NetworkClient client = FindObjectOfType<NetworkClient>();
+        if (client != null)
+        {
+            FindObjectOfType<NetworkClient>().SendMessageNetwork("rotate", byAngles[0] + "," + byAngles[1] + "," + byAngles[2]);
+        }
         StartCoroutine(RotateMe(byAngles, inTime));
     }
 
