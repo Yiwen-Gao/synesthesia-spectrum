@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   port: 13000
-  serverAddr: 127.0.0.1
+  serverAddr: 104.175.171.88
