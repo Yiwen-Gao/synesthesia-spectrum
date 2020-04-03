@@ -8,19 +8,25 @@ public class MapMover : MonoBehaviour {
     int currentPosition;
     public GameObject Map;
     public float rotationSpeed = 1.5f;
+    public KeyCode ground;
+    public KeyCode pinkwall;
+    public KeyCode greenwall;
 
     void Start() {
         Map = GameObject.Find("Map");
         currentPosition = 0;
     }
-
+    
+    
+    
     //T corresponds to turquoise wall (currentPosition = 1)
     //O corresponds to orange wall (currentPosition = 2)
     //G correspond to gray which is starting ground (currentPosition = 0)
     // Update is called once per frame
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.G)) && (currentPosition == 1))
+        // Input.GetKeyDown(KeyCode.G)
+        if ((Input.GetKeyDown(ground)) && (currentPosition == 1))
         {
             //Map.transform.Rotate(0, 0, 270);
             currentPosition = 0;
@@ -28,7 +34,7 @@ public class MapMover : MonoBehaviour {
 
         }
 
-        if ((Input.GetKeyDown(KeyCode.O)) && (currentPosition == 1))
+        if ((Input.GetKeyDown(pinkwall)) && (currentPosition == 1))
         {
             //Map.transform.Rotate(0, 0, 180);
             currentPosition = 2;
@@ -37,7 +43,7 @@ public class MapMover : MonoBehaviour {
         }
 
 
-        if (Input.GetKeyDown(KeyCode.O) && (currentPosition == 0))
+        if (Input.GetKeyDown(pinkwall) && (currentPosition == 0))
         {
             //Map.transform.Rotate(0, 0, 270);
             currentPosition = 2;
@@ -45,21 +51,21 @@ public class MapMover : MonoBehaviour {
 
         }
 
-        if (Input.GetKeyDown(KeyCode.T) && (currentPosition == 0))
+        if (Input.GetKeyDown(greenwall) && (currentPosition == 0))
         {
             //Map.transform.Rotate(0, 0, 90);
             currentPosition = 1;
             StartCoroutine(RotateMe(Vector3.forward * 90, rotationSpeed));
         }
 
-        if (Input.GetKeyDown(KeyCode.T) && (currentPosition == 2))
+        if (Input.GetKeyDown(greenwall) && (currentPosition == 2))
         {
             //Map.transform.Rotate(0, 0, 180);
             currentPosition = 1;
             StartCoroutine(RotateMe(Vector3.forward * -180, rotationSpeed));
         }
 
-        if (Input.GetKeyDown(KeyCode.G) && (currentPosition == 2))
+        if (Input.GetKeyDown(ground) && (currentPosition == 2))
         {
             //Map.transform.Rotate(0, 0, 90);
             currentPosition = 0;
