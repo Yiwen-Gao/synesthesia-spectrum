@@ -13,6 +13,16 @@ public class MapMover : MonoBehaviour {
     public KeyCode greenwall;
 
     void Start() {
+        NetworkClient client = FindObjectOfType<NetworkClient>();
+        if (client != null)
+        {
+            FindObjectOfType<NetworkClient>().RegisterCallback("rotate", (string rotation) =>
+            {
+                string[] anglesList = rotation.Split(',');
+                Vector3 byAngles = new Vector3(float.Parse(anglesList[0]), float.Parse(anglesList[1]), float.Parse(anglesList[2]));
+                StartCoroutine(RotateMe(byAngles, rotationSpeed));
+            });
+        }
         Map = GameObject.Find("Map");
         currentPosition = 0;
     }
@@ -30,7 +40,7 @@ public class MapMover : MonoBehaviour {
         {
             //Map.transform.Rotate(0, 0, 270);
             currentPosition = 0;
-            StartCoroutine(RotateMe(Vector3.forward * 270, rotationSpeed));
+            SendMessageAndRotate(Vector3.forward * 270, rotationSpeed);
 
         }
 
@@ -38,7 +48,7 @@ public class MapMover : MonoBehaviour {
         {
             //Map.transform.Rotate(0, 0, 180);
             currentPosition = 2;
-            StartCoroutine(RotateMe(Vector3.forward * -180, rotationSpeed));
+            SendMessageAndRotate(Vector3.forward * -180, rotationSpeed);
 
         }
 
@@ -47,7 +57,7 @@ public class MapMover : MonoBehaviour {
         {
             //Map.transform.Rotate(0, 0, 270);
             currentPosition = 2;
-            StartCoroutine(RotateMe(Vector3.forward * 270, rotationSpeed));
+            SendMessageAndRotate(Vector3.forward * 270, rotationSpeed);
 
         }
 
@@ -55,22 +65,32 @@ public class MapMover : MonoBehaviour {
         {
             //Map.transform.Rotate(0, 0, 90);
             currentPosition = 1;
-            StartCoroutine(RotateMe(Vector3.forward * 90, rotationSpeed));
+            SendMessageAndRotate(Vector3.forward * 90, rotationSpeed);
         }
 
         if (Input.GetKeyDown(greenwall) && (currentPosition == 2))
         {
             //Map.transform.Rotate(0, 0, 180);
             currentPosition = 1;
-            StartCoroutine(RotateMe(Vector3.forward * -180, rotationSpeed));
+            SendMessageAndRotate(Vector3.forward * -180, rotationSpeed);
         }
 
         if (Input.GetKeyDown(ground) && (currentPosition == 2))
         {
             //Map.transform.Rotate(0, 0, 90);
             currentPosition = 0;
-            StartCoroutine(RotateMe(Vector3.forward * 90, rotationSpeed));
+            SendMessageAndRotate(Vector3.forward * 90, rotationSpeed);
         }
+    }
+
+    void SendMessageAndRotate(Vector3 byAngles, float inTime)
+    {
+        NetworkClient client = FindObjectOfType<NetworkClient>();
+        if (client != null)
+        {
+            FindObjectOfType<NetworkClient>().SendMessageNetwork("rotate", byAngles[0] + "," + byAngles[1] + "," + byAngles[2]);
+        }
+        StartCoroutine(RotateMe(byAngles, inTime));
     }
 
     IEnumerator RotateMe(Vector3 byAngles, float inTime)

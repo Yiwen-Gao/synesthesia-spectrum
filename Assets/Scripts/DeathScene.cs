@@ -31,7 +31,8 @@ public class DeathScene : MonoBehaviour
          * Reference video https://youtu.be/VbZ9_C4-Qbo?t=481
          * */
 
-        //SceneManager.GetActiveScene().name (restarts current scene)
+        //Restarts current scene
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }

@@ -64,7 +64,7 @@ public class NetworkClient : MonoBehaviour
             }
             catch (Exception e)
             {
-                Debug.LogError(e);
+                Debug.LogException(e, this);
             }
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CubeMovement : MonoBehaviour
 {
@@ -10,12 +11,14 @@ public class CubeMovement : MonoBehaviour
     //Boost variables
     private float boostTime;
     private bool hasBoost;
+    private float yPosition;
 
     // Start is called before the first frame update
     void Start()
     {
         moveSpeed = 8f;
         rb = GetComponent<Rigidbody>();
+        yPosition = rb.position.y;
 
         boostTime = 0;
         hasBoost = false;
@@ -25,6 +28,12 @@ public class CubeMovement : MonoBehaviour
     void Update()
     {
         transform.Translate(moveSpeed*Input.GetAxis("Horizontal")*Time.deltaTime, 0f, moveSpeed*Input.GetAxis("Vertical")*Time.deltaTime);
+
+        //If the player falls off the map
+        if(rb.position.y - yPosition <= -5)
+        {
+            deathFall();
+        }
 
         //When player gets a speed boost
         if (hasBoost)
@@ -41,6 +50,11 @@ public class CubeMovement : MonoBehaviour
             }
         }
 
+    }
+
+    private void deathFall()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void OnTriggerEnter(Collider other)
