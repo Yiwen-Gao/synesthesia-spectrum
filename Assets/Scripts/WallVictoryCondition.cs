@@ -9,12 +9,30 @@ public class WallVictoryCondition : MonoBehaviour
     //Number of seconds when reloading the scene
     private float restartDelay = 1f;
 
+    private void Start()
+    {
+        NetworkClient client = FindObjectOfType<NetworkClient>();
+        if (client != null)
+        {
+            client.RegisterCallback("victory", (string name) =>
+                {
+                    Lose();
+                });
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             //CMD line prompt when Player object collides with wall
             Debug.Log("Game Over, you win!");
+
+            NetworkClient client = FindObjectOfType<NetworkClient>();
+            if (client != null)
+            {
+                client.SendMessageNetwork("victory");
+            }
 
             //Restart the game
             //"Restart" is the method, and restartDelay will delay the method by restartDelay seconds.
@@ -34,5 +52,12 @@ public class WallVictoryCondition : MonoBehaviour
         //SceneManager.GetActiveScene().name (restarts current scene)
         SceneManager.LoadScene("VictoryScene");
         
+    }
+
+    void Lose()
+    {
+        Debug.Log("You lose");
+
+        SceneManager.LoadScene("LoserScene");
     }
 }
