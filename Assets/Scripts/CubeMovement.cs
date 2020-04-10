@@ -8,7 +8,10 @@ public class CubeMovement : MonoBehaviour
     public float moveSpeed;
     private Rigidbody rb;
 
+<<<<<<< HEAD
     //Boost variables
+=======
+>>>>>>> 0e516df777da9b8007d52ffa88f6d58662a0f87c
     private float boostTime;
 
     private bool hasBoost;
