@@ -23,7 +23,8 @@ public class MapMover : MonoBehaviour {
         {
             FindObjectOfType<NetworkClient>().RegisterCallback("rotate", (string rotationState) =>
             {
-                Vector3 toAngle = rotationStates[int.Parse(rotationState)];
+                currentPosition = int.Parse(rotationState);
+                Vector3 toAngle = rotationStates[currentPosition];
                 StartCoroutine(RotateMe(toAngle, rotationSpeed));
             });
         }
