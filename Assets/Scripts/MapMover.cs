@@ -13,19 +13,36 @@ public class MapMover : MonoBehaviour {
     public float rotationSpeed = 1.5f;
     public KeyCode rotateLeftButton;
     public KeyCode rotateRightButton;
+    public float controlTime = 5f;
+    public MeshRenderer player;
+    public Material canRotateColor;
+    public Material opponentControlColor;
     private Vector3 startRotation;
-    bool isRotating;
+    private float timer;
+    private bool isRotating;
+    private bool isInControl = false;
 
     void Start() {
-
         NetworkClient client = FindObjectOfType<NetworkClient>();
         if (client != null)
         {
-            FindObjectOfType<NetworkClient>().RegisterCallback("rotate", (string rotationState) =>
+            client.RegisterCallback("rotate", (string rotationState) =>
             {
                 currentPosition = int.Parse(rotationState);
                 Vector3 toAngle = rotationStates[currentPosition];
                 StartCoroutine(RotateMe(toAngle, rotationSpeed));
+            });
+            client.RegisterCallback("finishedTimer", (string name) =>
+            {
+                isInControl = false;
+                timer = controlTime;
+            });
+            client.RegisterCallback("player", (string number) => {
+                if (number == "1")
+                {
+                    isInControl = true;
+                    timer = controlTime;
+                }
             });
         }
         startRotation = this.transform.rotation.eulerAngles;
@@ -34,6 +51,24 @@ public class MapMover : MonoBehaviour {
     
     void Update()
     {
+        if (!isInControl)
+        {
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                NetworkClient client = FindObjectOfType<NetworkClient>();
+                if (client != null)
+                {
+                    client.SendMessageNetwork("finishedTimer");
+                }
+                isInControl = true;
+            }
+            player.material = opponentControlColor;
+        }
+        else
+        {
+            player.material = canRotateColor;
+        }
         if (Input.GetKeyDown(rotateRightButton) && CanRotate())
         {
             currentPosition = currentPosition - 1;
@@ -52,7 +87,7 @@ public class MapMover : MonoBehaviour {
 
     bool CanRotate()
     {
-        return !isRotating;
+        return !isRotating && isInControl;
     }
 
     void SendMessageAndRotate(int rotationState, float inTime)
