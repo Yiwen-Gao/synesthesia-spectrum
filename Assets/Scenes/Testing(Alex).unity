@@ -353,6 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  rb: {fileID: 0}
 --- !u!54 &697538068
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -494,6 +495,9 @@ MonoBehaviour:
   angle: 90
   Map: {fileID: 0}
   rotationSpeed: 1.5
+  ground: 0
+  pinkwall: 0
+  greenwall: 0
 --- !u!4 &1077811565
 Transform:
   m_ObjectHideFlags: 0
@@ -962,17 +966,17 @@ PrefabInstance:
     - target: {fileID: 6165767093686132825, guid: 14bcab633edf6a64a9ddda8145ab5dcf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.08
+      value: -3.23
       objectReference: {fileID: 0}
     - target: {fileID: 6165767093686132825, guid: 14bcab633edf6a64a9ddda8145ab5dcf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.13
+      value: -1.1
       objectReference: {fileID: 0}
     - target: {fileID: 6165767093686132825, guid: 14bcab633edf6a64a9ddda8145ab5dcf,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.4
+      value: -11.19
       objectReference: {fileID: 0}
     - target: {fileID: 6165767093686132825, guid: 14bcab633edf6a64a9ddda8145ab5dcf,
         type: 3}

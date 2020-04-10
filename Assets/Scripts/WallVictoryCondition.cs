@@ -8,6 +8,7 @@ public class WallVictoryCondition : MonoBehaviour
 
     //Number of seconds when reloading the scene
     private float restartDelay = 1f;
+    public string nextScene;
 
     private void Start()
     {
@@ -26,7 +27,7 @@ public class WallVictoryCondition : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             //CMD line prompt when Player object collides with wall
-            Debug.Log("Game Over, you win!");
+            Debug.Log("You won!");
 
             NetworkClient client = FindObjectOfType<NetworkClient>();
             if (client != null)
@@ -50,7 +51,7 @@ public class WallVictoryCondition : MonoBehaviour
          * */
 
         //SceneManager.GetActiveScene().name (restarts current scene)
-        SceneManager.LoadScene("VictoryScene");
+        SceneManager.LoadScene(nextScene);
         
     }
 
