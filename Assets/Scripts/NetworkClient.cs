@@ -112,7 +112,11 @@ public class NetworkClient : MonoBehaviour
                 {
                     messageBuilder.Length--;
                     Debug.Log("Received a message: " + messageBuilder);
-                    ReceiveMessageNetwork(messageBuilder.ToString());
+                    string[] commands = messageBuilder.ToString().Split('!');
+                    foreach (string command in commands)
+                    {
+                        ReceiveMessageNetwork(command);
+                    }
                     messageBuilder = new StringBuilder();
                 }
             }
