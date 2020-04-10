@@ -8,12 +8,12 @@ public class CubeMovement : MonoBehaviour
     public float moveSpeed;
     private Rigidbody rb;
 
-    Boost variables
+    //Boost variables
     private float boostTime;
 
     private bool hasBoost;
     
-    private float yPosition;
+    public float yPosition;
     
     // Start is called before the first frame update
     void Start()
@@ -32,12 +32,6 @@ public class CubeMovement : MonoBehaviour
         transform.Translate(moveSpeed*Input.GetAxis("Horizontal")*Time.deltaTime, 0f, moveSpeed*Input.GetAxis("Vertical")*Time.deltaTime);
 
         
-        //If the player falls off the map
-        if (rb.position.y - yPosition <= -15)
-        {
-            deathFall();
-        }
-        
         //When player gets a speed boost
         if (hasBoost)
         {
@@ -54,11 +48,6 @@ public class CubeMovement : MonoBehaviour
         }
         
 
-    }
-
-    private void deathFall()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     
     private void OnTriggerEnter(Collider other)
