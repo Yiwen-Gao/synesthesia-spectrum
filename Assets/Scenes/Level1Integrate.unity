@@ -272,11 +272,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2173880456269572682, guid: fac2d08791067d94fb509030298906d8,
-        type: 3}
-      propertyPath: serverAddr
-      value: 127.0.0.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fac2d08791067d94fb509030298906d8, type: 3}
 --- !u!4 &354810265 stripped
@@ -315,8 +310,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 180
-  Map: {fileID: 436346372}
+  rotationStates:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 90}
+  - {x: 0, y: 0, z: 180}
+  - {x: 0, y: 0, z: 270}
   rotationSpeed: 1.5
+  rotateLeftButton: 0
+  rotateRightButton: 0
 --- !u!4 &436346374
 Transform:
   m_ObjectHideFlags: 0
