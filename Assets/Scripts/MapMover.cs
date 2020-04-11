@@ -5,103 +5,112 @@ using UnityEngine;
 public class MapMover : MonoBehaviour {
     // Start is called before the first frame update
     public float angle = 180;
+    public Vector3[] rotationStates = { Vector3.zero, 
+        Vector3.forward * 90, 
+        Vector3.forward * 180,
+        Vector3.forward * 270 };
     int currentPosition;
-    public GameObject Map;
     public float rotationSpeed = 1.5f;
-    public KeyCode ground;
-    public KeyCode pinkwall;
-    public KeyCode greenwall;
+    public KeyCode rotateLeftButton;
+    public KeyCode rotateRightButton;
+    public float controlTime = 5f;
+    public MeshRenderer player;
+    public Material canRotateColor;
+    public Material opponentControlColor;
+    private Vector3 startRotation;
+    private float timer;
+    private bool isRotating;
+    private bool isInControl = false;
 
     void Start() {
         NetworkClient client = FindObjectOfType<NetworkClient>();
         if (client != null)
         {
-            FindObjectOfType<NetworkClient>().RegisterCallback("rotate", (string rotation) =>
+            client.RegisterCallback("rotate", (string rotationState) =>
             {
-                string[] anglesList = rotation.Split(',');
-                Vector3 byAngles = new Vector3(float.Parse(anglesList[0]), float.Parse(anglesList[1]), float.Parse(anglesList[2]));
-                StartCoroutine(RotateMe(byAngles, rotationSpeed));
+                currentPosition = int.Parse(rotationState);
+                Vector3 toAngle = rotationStates[currentPosition];
+                StartCoroutine(RotateMe(toAngle, rotationSpeed));
+            });
+            client.RegisterCallback("finishedTimer", (string name) =>
+            {
+                isInControl = false;
+                timer = controlTime;
+            });
+            client.RegisterCallback("player", (string number) => {
+                if (number == "1")
+                {
+                    isInControl = true;
+                    timer = controlTime;
+                }
             });
         }
-        Map = GameObject.Find("Map");
+        startRotation = this.transform.rotation.eulerAngles;
         currentPosition = 0;
     }
     
-    
-    
-    //T corresponds to turquoise wall (currentPosition = 1)
-    //O corresponds to orange wall (currentPosition = 2)
-    //G correspond to gray which is starting ground (currentPosition = 0)
-    // Update is called once per frame
     void Update()
     {
-        // Input.GetKeyDown(KeyCode.G)
-        if ((Input.GetKeyDown(ground)) && (currentPosition == 1))
+        if (!isInControl)
         {
-            //Map.transform.Rotate(0, 0, 270);
-            currentPosition = 0;
-            SendMessageAndRotate(Vector3.forward * 270, rotationSpeed);
-
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                NetworkClient client = FindObjectOfType<NetworkClient>();
+                if (client != null)
+                {
+                    client.SendMessageNetwork("finishedTimer");
+                }
+                isInControl = true;
+            }
+            player.material = opponentControlColor;
         }
-
-        if ((Input.GetKeyDown(pinkwall)) && (currentPosition == 1))
+        else
         {
-            //Map.transform.Rotate(0, 0, 180);
-            currentPosition = 2;
-            SendMessageAndRotate(Vector3.forward * -180, rotationSpeed);
-
+            player.material = canRotateColor;
         }
-
-
-        if (Input.GetKeyDown(pinkwall) && (currentPosition == 0))
+        if (Input.GetKeyDown(rotateRightButton) && CanRotate())
         {
-            //Map.transform.Rotate(0, 0, 270);
-            currentPosition = 2;
-            SendMessageAndRotate(Vector3.forward * 270, rotationSpeed);
-
+            currentPosition = currentPosition - 1;
+            if (currentPosition < 0)
+            {
+                currentPosition = currentPosition + 4;
+            }
+            SendMessageAndRotate(currentPosition, rotationSpeed);
         }
-
-        if (Input.GetKeyDown(greenwall) && (currentPosition == 0))
+        else if (Input.GetKeyDown(rotateLeftButton) && CanRotate())
         {
-            //Map.transform.Rotate(0, 0, 90);
-            currentPosition = 1;
-            SendMessageAndRotate(Vector3.forward * 90, rotationSpeed);
-        }
-
-        if (Input.GetKeyDown(greenwall) && (currentPosition == 2))
-        {
-            //Map.transform.Rotate(0, 0, 180);
-            currentPosition = 1;
-            SendMessageAndRotate(Vector3.forward * -180, rotationSpeed);
-        }
-
-        if (Input.GetKeyDown(ground) && (currentPosition == 2))
-        {
-            //Map.transform.Rotate(0, 0, 90);
-            currentPosition = 0;
-            SendMessageAndRotate(Vector3.forward * 90, rotationSpeed);
+            currentPosition = (currentPosition + 1) % 4;
+            SendMessageAndRotate(currentPosition, rotationSpeed);
         }
     }
 
-    void SendMessageAndRotate(Vector3 byAngles, float inTime)
+    bool CanRotate()
+    {
+        return !isRotating && isInControl;
+    }
+
+    void SendMessageAndRotate(int rotationState, float inTime)
     {
         NetworkClient client = FindObjectOfType<NetworkClient>();
         if (client != null)
         {
-            FindObjectOfType<NetworkClient>().SendMessageNetwork("rotate", byAngles[0] + "," + byAngles[1] + "," + byAngles[2]);
+            FindObjectOfType<NetworkClient>().SendMessageNetwork("rotate", rotationState.ToString());
         }
-        StartCoroutine(RotateMe(byAngles, inTime));
+        StartCoroutine(RotateMe(rotationStates[currentPosition], inTime));
     }
 
-    IEnumerator RotateMe(Vector3 byAngles, float inTime)
+    IEnumerator RotateMe(Vector3 targetAngle, float inTime)
     {
+        isRotating = true;
         var fromAngle = transform.rotation;
-        var toAngle = Quaternion.Euler(transform.eulerAngles + byAngles);
+        var toAngle = Quaternion.Euler(startRotation + targetAngle);
         for (var t = 0f; t < 1; t += Time.deltaTime / inTime)
         {
             transform.rotation = Quaternion.Slerp(fromAngle, toAngle, t);
             yield return null;
         }
         transform.rotation = Quaternion.Slerp(fromAngle, toAngle, 1);
+        isRotating = false;
     }
 }

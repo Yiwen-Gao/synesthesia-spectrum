@@ -133,6 +133,20 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6165767093832156950}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &425518928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425518921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92b3a7c2367db84f8c3f0d9101ff933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onGround: 0
+  jumpSpeed: 5
 --- !u!1 &498066551
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,7 +161,7 @@ GameObject:
   - component: {fileID: 498066552}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -353,6 +367,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+  rb: {fileID: 0}
 --- !u!54 &697538068
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -492,8 +507,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 90
-  Map: {fileID: 0}
+  rotationStates:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 90}
+  - {x: 0, y: 0, z: 180}
+  - {x: 0, y: 0, z: 270}
   rotationSpeed: 1.5
+  rotateLeftButton: 0
+  rotateRightButton: 0
+  controlTime: 5
+  player: {fileID: 0}
+  canRotateColor: {fileID: 0}
+  opponentControlColor: {fileID: 0}
 --- !u!4 &1077811565
 Transform:
   m_ObjectHideFlags: 0
@@ -533,6 +558,7 @@ GameObject:
   - component: {fileID: 1422188974}
   - component: {fileID: 1422188973}
   - component: {fileID: 1422188972}
+  - component: {fileID: 1422188976}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Wall
@@ -614,6 +640,19 @@ Transform:
   m_Father: {fileID: 1077811565}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1422188976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422188971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 310b29eebe197db42be89957505e0dc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: 
 --- !u!1 &1718421300
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,17 +1001,17 @@ PrefabInstance:
     - target: {fileID: 6165767093686132825, guid: 14bcab633edf6a64a9ddda8145ab5dcf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.08
+      value: -3.23
       objectReference: {fileID: 0}
     - target: {fileID: 6165767093686132825, guid: 14bcab633edf6a64a9ddda8145ab5dcf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.13
+      value: -1.1
       objectReference: {fileID: 0}
     - target: {fileID: 6165767093686132825, guid: 14bcab633edf6a64a9ddda8145ab5dcf,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.4
+      value: -11.19
       objectReference: {fileID: 0}
     - target: {fileID: 6165767093686132825, guid: 14bcab633edf6a64a9ddda8145ab5dcf,
         type: 3}
@@ -1013,6 +1052,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6165767093686132828, guid: 14bcab633edf6a64a9ddda8145ab5dcf,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6165767093686132831, guid: 14bcab633edf6a64a9ddda8145ab5dcf,
         type: 3}

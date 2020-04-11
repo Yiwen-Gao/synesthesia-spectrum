@@ -8,6 +8,7 @@ TagManager:
   - Boost
   - Horizontal Wall
   - Vertical Wall
+  - Ground
   layers:
   - Default
   - TransparentFX

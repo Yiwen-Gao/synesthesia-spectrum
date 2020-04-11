@@ -310,8 +310,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 180
-  Map: {fileID: 436346372}
+  rotationStates:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 90}
+  - {x: 0, y: 0, z: 180}
+  - {x: 0, y: 0, z: 270}
   rotationSpeed: 1.5
+  rotateLeftButton: 0
+  rotateRightButton: 0
+  controlTime: 5
+  player: {fileID: 0}
+  canRotateColor: {fileID: 0}
+  opponentControlColor: {fileID: 0}
 --- !u!4 &436346374
 Transform:
   m_ObjectHideFlags: 0

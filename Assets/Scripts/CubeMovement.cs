@@ -8,11 +8,16 @@ public class CubeMovement : MonoBehaviour
     public float moveSpeed;
     private Rigidbody rb;
 
+<<<<<<< HEAD
     //Boost variables
+=======
+>>>>>>> 0e516df777da9b8007d52ffa88f6d58662a0f87c
     private float boostTime;
-    private bool hasBoost;
-    private float yPosition;
 
+    private bool hasBoost;
+    
+    public float yPosition;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -29,19 +34,14 @@ public class CubeMovement : MonoBehaviour
     {
         transform.Translate(moveSpeed*Input.GetAxis("Horizontal")*Time.deltaTime, 0f, moveSpeed*Input.GetAxis("Vertical")*Time.deltaTime);
 
-        //If the player falls off the map
-        if(rb.position.y - yPosition <= -5)
-        {
-            deathFall();
-        }
-
+        
         //When player gets a speed boost
         if (hasBoost)
         {
             //Setting the time for the boost
             boostTime += Time.deltaTime;
             //Ends the boost after x amount of time
-            if(boostTime >= 4)
+            if(boostTime >= 3)
             {
                 //Resets to regular movement
                 moveSpeed = 8f;
@@ -49,14 +49,10 @@ public class CubeMovement : MonoBehaviour
                 hasBoost = false;
             }
         }
+        
 
     }
-
-    private void deathFall()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         //Tag for object to give the boost
@@ -69,7 +65,7 @@ public class CubeMovement : MonoBehaviour
 
         }
     }
-
+    
 
     private void OnCollisionEnter(Collision collision)
     {
