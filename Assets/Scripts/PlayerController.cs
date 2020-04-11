@@ -14,7 +14,10 @@ public class PlayerController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        
+        if (Input.GetKeyDown(KeyCode.C)) {
+        	Vector3 movement = new Vector3(0.0f, 150, 0.0f);
+        	rb.AddForce(movement);
+        }
     }
 
     void FixedUpdate() {
