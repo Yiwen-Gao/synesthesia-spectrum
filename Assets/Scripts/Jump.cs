@@ -21,7 +21,7 @@ public class Jump : MonoBehaviour
         {
             if (Input.GetButtonDown("Jump"))
             {
-                rb.velocity = new Vector3(0f, jumpSpeed, 0f);
+                rb.velocity = Vector3.up * jumpSpeed;
                 onGround = false;
             }
         }
@@ -29,7 +29,6 @@ public class Jump : MonoBehaviour
 
     void OnCollisionEnter(Collision any)
     {
-        any.gameObject.CompareTag("Ground");
         onGround = true;
     }
 
