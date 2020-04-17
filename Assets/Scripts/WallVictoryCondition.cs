@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class WallVictoryCondition : MonoBehaviour
 {
-
+    public static int score = 0;
     //Number of seconds when reloading the scene
     private float restartDelay = 1f;
     public string nextScene;
@@ -38,6 +38,7 @@ public class WallVictoryCondition : MonoBehaviour
             //Restart the game
             //"Restart" is the method, and restartDelay will delay the method by restartDelay seconds.
             Invoke("Restart", restartDelay);
+            score++;
         }
     }
 
@@ -59,6 +60,6 @@ public class WallVictoryCondition : MonoBehaviour
     {
         Debug.Log("You lose");
 
-        SceneManager.LoadScene("LoserScene");
+        SceneManager.LoadScene(nextScene);
     }
 }
