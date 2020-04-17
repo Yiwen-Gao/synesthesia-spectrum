@@ -79030,6 +79030,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 123268185}
     m_Modifications:
+    - target: {fileID: 2304518534217351839, guid: d1b24f131dd756943a90c72091a720b7,
+        type: 3}
+      propertyPath: nextScene
+      value: VictoryScene
+      objectReference: {fileID: 0}
     - target: {fileID: 5446515562837635101, guid: d1b24f131dd756943a90c72091a720b7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
