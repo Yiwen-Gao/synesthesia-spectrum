@@ -3,12 +3,37 @@ guid: 076130931b6674f67b1e4b195395a84e
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rock1.001
+    second: {fileID: 2100000, guid: bac727d6d2ea14f0697b7cef89015620, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rock2.001
+    second: {fileID: 2100000, guid: feeb85c89abdf499986b7a5990133718, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rock3.001
+    second: {fileID: 2100000, guid: b97611c7a0b924a03b5876265cf36518, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sand.001
+    second: {fileID: 2100000, guid: 8d819d03e1151458a88ad4837d3746c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: water
+    second: {fileID: 2100000, guid: 016327604dccc4a8fade651435bebea8, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

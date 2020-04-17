@@ -6,7 +6,22 @@ ModelImporter:
   - first:
       74: -623603649343465320
     second: Scene
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eye
+    second: {fileID: 2100000, guid: ce702f519e42a4338b20be37fdec0840, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eyeball
+    second: {fileID: 2100000, guid: 3fe6aed4b113d47af911e17c870aa5c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: fishbody
+    second: {fileID: 2100000, guid: 1d515bb47fcda41c28d5675ee8c065cf, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
