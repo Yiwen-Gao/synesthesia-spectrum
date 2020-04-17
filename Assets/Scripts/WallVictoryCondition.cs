@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class WallVictoryCondition : MonoBehaviour
 {
 
     //Number of seconds when reloading the scene
-    private float restartDelay = 1f;
+    private float restartDelay = 2.5f;
     public string nextScene;
+    public Text playerStatusDisplay;
 
     private void Start()
     {
@@ -20,15 +22,14 @@ public class WallVictoryCondition : MonoBehaviour
                     Lose();
                 });
         }
+
+        // playerStatusDisplay.enabled = false;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            //CMD line prompt when Player object collides with wall
-            Debug.Log("You won!");
-
             NetworkClient client = FindObjectOfType<NetworkClient>();
             if (client != null)
             {
@@ -51,14 +52,16 @@ public class WallVictoryCondition : MonoBehaviour
          * */
 
         //SceneManager.GetActiveScene().name (restarts current scene)
+        playerStatusDisplay.enabled = true;
+        playerStatusDisplay.text = "You win!";
+        Debug.Log(playerStatusDisplay);
         SceneManager.LoadScene(nextScene);
-        
     }
 
     void Lose()
     {
-        Debug.Log("You lose");
-
+        playerStatusDisplay.enabled = true;
+        playerStatusDisplay.text = "You lose!";
         SceneManager.LoadScene("LoserScene");
     }
 }
