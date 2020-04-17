@@ -14,9 +14,13 @@ GameObject:
   - component: {fileID: 5717123224120908345}
   - component: {fileID: 5717123224120908346}
   - component: {fileID: 5717123224120908347}
+<<<<<<< HEAD
   - component: {fileID: 1636027808953375339}
   - component: {fileID: 7365236593622083734}
   - component: {fileID: -277766278088458507}
+=======
+  - component: {fileID: 841244312}
+>>>>>>> 7fcf3dd2dd0c979f917a3242ecf62b7f4eaa4326
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -127,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+<<<<<<< HEAD
   rb: {fileID: 0}
 --- !u!114 &1636027808953375339
 MonoBehaviour:
@@ -141,6 +146,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &7365236593622083734
+=======
+--- !u!114 &841244312
+>>>>>>> 7fcf3dd2dd0c979f917a3242ecf62b7f4eaa4326
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,6 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b92b3a7c2367db84f8c3f0d9101ff933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   onGround: 0
   jumpSpeed: 2
 --- !u!114 &-277766278088458507
@@ -166,3 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ca30fc0fa8156147958225d05fd3cc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+  onGround: 1
+  jumpSpeed: 2
+>>>>>>> 7fcf3dd2dd0c979f917a3242ecf62b7f4eaa4326
