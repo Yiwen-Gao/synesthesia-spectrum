@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Levels/Level1Integrated.unity
+    path: Assets/Scenes/Levels/Level 2 Integrated.unity
     guid: 9a711504ea13a82459d869528a6bc78a
   - enabled: 0
     path: Assets/Scenes/NetworkClientTest.unity
     guid: ab2f65b75d73b994db3f2af1f49c051c
   - enabled: 0
-    path: Assets/Scenes/Levels/Level0.unity
+    path: Assets/Scenes/Levels/Level2.unity
     guid: 5c64849b37f3640d38451a4a766415e8
   - enabled: 1
     path: Assets/Scenes/LoserScene.unity
