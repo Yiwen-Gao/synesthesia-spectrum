@@ -15,7 +15,9 @@ public class NetworkClient : MonoBehaviour
     private TcpClient client = null;
     private NetworkStream stream = null;
 
-    private Dictionary<string, Action<string>> callbacks;
+    private Dictionary<string, Action<string>> callbacks = new Dictionary<string, Action<string>>();
+
+    public bool offlineMode = false;
 
     // Start is called before the first frame update
     void Awake()
@@ -27,7 +29,6 @@ public class NetworkClient : MonoBehaviour
         else
         {
             DontDestroyOnLoad(this.gameObject);
-            callbacks = new Dictionary<string, Action<string>>();
             messageBuilder = new StringBuilder();
             AttemptConnection();
         }
@@ -35,6 +36,10 @@ public class NetworkClient : MonoBehaviour
 
     public void SendMessageNetwork(string message, string argument="")
     {
+        if (offlineMode)
+        {
+            return;
+        }
         try
         {
             byte[] data = System.Text.Encoding.ASCII.GetBytes(message + ":" + argument + "!");
@@ -76,6 +81,11 @@ public class NetworkClient : MonoBehaviour
 
     private void AttemptConnection()
     {
+        if (offlineMode)
+        {
+            Debug.Log("Playing in offline mode.");
+            return;
+        }
         try
         {
             IPAddress localAddr = IPAddress.Parse(serverAddr);
@@ -89,12 +99,18 @@ public class NetworkClient : MonoBehaviour
         catch (SocketException e)
         {
             Debug.LogException(e, this);
+            Debug.Log("Failed to connect, playing in offline mode.");
+            offlineMode = true;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (offlineMode)
+        {
+            return;
+        }
         try
         {
             if (stream != null && stream.CanRead)
