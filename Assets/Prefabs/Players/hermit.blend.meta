@@ -6,7 +6,22 @@ ModelImporter:
   - first:
       74: -623603649343465320
     second: Scene
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: arms_green
+    second: {fileID: 2100000, guid: 69296a07ee25b42c19f4d0e6b11374ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eyes
+    second: {fileID: 2100000, guid: 3099614473ece47678df6dace7687f3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shell_green.001
+    second: {fileID: 2100000, guid: ef2a777b9ac414accb685325a291035a, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
