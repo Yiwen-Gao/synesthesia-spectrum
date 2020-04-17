@@ -37,13 +37,11 @@ public class MapMover : MonoBehaviour {
                 isInControl = false;
                 timer = controlTime;
             });
-            client.RegisterCallback("player", (string number) => {
-                if (number == "1")
-                {
-                    isInControl = true;
-                    timer = controlTime;
-                }
-            });
+            if (client.PlayerNum == 2)
+            {
+                isInControl = false;
+                timer = controlTime;
+            }
         }
         startRotation = this.transform.rotation.eulerAngles;
         currentPosition = 0;

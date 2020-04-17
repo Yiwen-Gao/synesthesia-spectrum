@@ -5,9 +5,12 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System;
+using UnityEngine.SceneManagement;
 
 public class NetworkClient : MonoBehaviour
 {
+    public int PlayerNum { get { return playerNum; } }
+
     public int port = 13000;
     public string serverAddr = "127.0.0.1";
     StringBuilder messageBuilder;
@@ -18,6 +21,9 @@ public class NetworkClient : MonoBehaviour
     private Dictionary<string, Action<string>> callbacks = new Dictionary<string, Action<string>>();
 
     public bool offlineMode = false;
+
+    public string firstLevel;
+    private int playerNum = 1;
 
     // Start is called before the first frame update
     void Awake()
@@ -31,6 +37,17 @@ public class NetworkClient : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
             messageBuilder = new StringBuilder();
             AttemptConnection();
+            if (!offlineMode)
+            {
+                RegisterCallback("player", (string id) => {
+                    playerNum = int.Parse(id);
+                    SceneManager.LoadScene(firstLevel);
+                });
+            }
+            else
+            {
+                SceneManager.LoadScene(firstLevel);
+            }
         }
     }
 
