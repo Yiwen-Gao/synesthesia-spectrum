@@ -14,7 +14,9 @@ GameObject:
   - component: {fileID: 5717123224120908345}
   - component: {fileID: 5717123224120908346}
   - component: {fileID: 5717123224120908347}
-  - component: {fileID: 841244312}
+  - component: {fileID: 1636027808953375339}
+  - component: {fileID: 7365236593622083734}
+  - component: {fileID: -277766278088458507}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -125,7 +127,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
---- !u!114 &841244312
+  rb: {fileID: 0}
+--- !u!114 &1636027808953375339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5717123224120908340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c1f0c36cb08d3545bb9c330e6a8fbbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7365236593622083734
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,3 +154,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onGround: 1
   jumpSpeed: 2
+--- !u!114 &-277766278088458507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5717123224120908340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ca30fc0fa8156147958225d05fd3cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

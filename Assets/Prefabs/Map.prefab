@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2173880456269572676
+--- !u!1 &3235362812856486750
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,42 +8,52 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2173880456269572677}
-  - component: {fileID: 2173880456269572682}
+  - component: {fileID: 3235362812856486749}
+  - component: {fileID: 4750864336600945489}
   m_Layer: 0
-  m_Name: NetworkClient
+  m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2173880456269572677
+--- !u!4 &3235362812856486749
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2173880456269572676}
+  m_GameObject: {fileID: 3235362812856486750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.138931, y: -1.9771951, z: 9.535062}
+  m_LocalPosition: {x: -1.8153784, y: -0.9526147, z: 2.5961654}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2173880456269572682
+--- !u!114 &4750864336600945489
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2173880456269572676}
+  m_GameObject: {fileID: 3235362812856486750}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f93a35acc3a41a4e90bc50cb59b7bcf, type: 3}
+  m_Script: {fileID: 11500000, guid: edfbb016d25b75741a472bd88385eb63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  port: 13000
-  serverAddr: 104.175.171.88
-  offlineMode: 1
-  firstLevel: Level 1 Integrated
+  angle: 180
+  rotationStates:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 90}
+  - {x: 0, y: 0, z: 180}
+  - {x: 0, y: 0, z: 270}
+  rotationSpeed: 1.5
+  rotateLeftButton: 276
+  rotateRightButton: 275
+  controlTime: 5
+  player: {fileID: 0}
+  canRotateColor: {fileID: 2100000, guid: 75c82c82e50a0f143bcdba51a1c2d917, type: 2}
+  opponentControlColor: {fileID: 2100000, guid: 7516b96657fbc9840adf48282326a7f2,
+    type: 2}
