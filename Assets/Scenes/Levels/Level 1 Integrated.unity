@@ -1897,7 +1897,7 @@ PrefabInstance:
     - target: {fileID: 7430001213264251240, guid: 4bd0ad644b947406ead420f5b880ab74,
         type: 3}
       propertyPath: m_Name
-      value: Wall 4
+      value: Wall 2
       objectReference: {fileID: 0}
     - target: {fileID: 7430001213264251240, guid: 4bd0ad644b947406ead420f5b880ab74,
         type: 3}
@@ -1907,7 +1907,7 @@ PrefabInstance:
     - target: {fileID: 7430001213598854166, guid: 4bd0ad644b947406ead420f5b880ab74,
         type: 3}
       propertyPath: m_Name
-      value: Wall 2
+      value: Wall 4
       objectReference: {fileID: 0}
     - target: {fileID: 7430001213598854166, guid: 4bd0ad644b947406ead420f5b880ab74,
         type: 3}
