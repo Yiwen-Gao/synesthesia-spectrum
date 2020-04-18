@@ -23,7 +23,7 @@ public class WallVictoryCondition : MonoBehaviour
                 });
         }
 
-        // playerStatusDisplay.enabled = false;
+        playerStatusDisplay.enabled = false;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -37,31 +37,21 @@ public class WallVictoryCondition : MonoBehaviour
             }
 
             //Restart the game
-            //"Restart" is the method, and restartDelay will delay the method by restartDelay seconds.
-            Invoke("Restart", restartDelay);
             score++;
+            StartCoroutine(LoadNextScene(restartDelay, "You win!"));
         }
-    }
-
-    void Restart()
-    {
-        /*
-         * This line reloads the scene
-         * .GetActiveScene().name() gets the current scene level
-         * If we have other scenes, we can set this to load those scenes.
-         * Reference video https://youtu.be/VbZ9_C4-Qbo?t=481
-         * */
-
-        //SceneManager.GetActiveScene().name (restarts current scene)
-        playerStatusDisplay.enabled = true;
-        playerStatusDisplay.text = "You win!";
-        SceneManager.LoadScene(nextScene);
     }
 
     void Lose()
     {
+        StartCoroutine(LoadNextScene(restartDelay, "You lose!"));
+    }
+
+    IEnumerator LoadNextScene(float delay, string text) {
         playerStatusDisplay.enabled = true;
-        playerStatusDisplay.text = "You lose!";
+        playerStatusDisplay.text = text;
+
+        yield return new WaitForSeconds(delay);
         SceneManager.LoadScene(nextScene);
     }
 }
