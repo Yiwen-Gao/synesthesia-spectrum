@@ -1,27 +1,9 @@
 fileFormatVersion: 2
-guid: 8f04f96441fdd4f7e9968f84ad91701b
+guid: d18e064948b9844e2b8bd1527bb25da1
 ModelImporter:
   serializedVersion: 19300
-  internalIDToNameTable:
-  - first:
-      74: -623603649343465320
-    second: Scene
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: arms_green
-    second: {fileID: 2100000, guid: 69296a07ee25b42c19f4d0e6b11374ca, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: eyes
-    second: {fileID: 2100000, guid: 3099614473ece47678df6dace7687f3d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: shell_green.001
-    second: {fileID: 2100000, guid: ef2a777b9ac414accb685325a291035a, type: 2}
+  internalIDToNameTable: []
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
