@@ -60330,6 +60330,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1868417826 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6368571816530826315, guid: 5ab912d9642ef4fe7bf2e6c1f4e92915,
+    type: 3}
+  m_PrefabInstance: {fileID: 1868417824}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1869169631
 GameObject:
   m_ObjectHideFlags: 0
@@ -69763,6 +69775,11 @@ PrefabInstance:
       propertyPath: nextScene
       value: VictoryScene
       objectReference: {fileID: 0}
+    - target: {fileID: 2304518534217351839, guid: d1b24f131dd756943a90c72091a720b7,
+        type: 3}
+      propertyPath: playerStatusDisplay
+      value: 
+      objectReference: {fileID: 1868417826}
     - target: {fileID: 5446515562837635101, guid: d1b24f131dd756943a90c72091a720b7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
