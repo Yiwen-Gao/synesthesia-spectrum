@@ -4812,7 +4812,7 @@ MonoBehaviour:
   rotateLeftButton: 276
   rotateRightButton: 275
   controlTime: 5
-  player: {fileID: 5717123224357602468}
+  player: {fileID: 0}
   canRotateColor: {fileID: 2100000, guid: 75c82c82e50a0f143bcdba51a1c2d917, type: 2}
   opponentControlColor: {fileID: 2100000, guid: 1befa46d08a31c14086df089ab86534f,
     type: 2}
@@ -5407,9 +5407,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f757983d712b465e8dcfecec4e2d359, type: 3}
---- !u!23 &5717123224357602468 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 5717123224120908344, guid: 6f757983d712b465e8dcfecec4e2d359,
-    type: 3}
-  m_PrefabInstance: {fileID: 5717123224357602467}
-  m_PrefabAsset: {fileID: 0}
