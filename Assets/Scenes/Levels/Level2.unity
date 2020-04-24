@@ -1408,7 +1408,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b92b3a7c2367db84f8c3f0d9101ff933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD:Assets/Scenes/Level 0.unity
   onGround: 0
   jumpSpeed: 2
 --- !u!114 &841244313
@@ -1423,10 +1422,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c1f0c36cb08d3545bb9c330e6a8fbbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-=======
-  onGround: 1
-  jumpSpeed: 2
->>>>>>> 7fcf3dd2dd0c979f917a3242ecf62b7f4eaa4326:Assets/Scenes/Levels/Level2.unity
 --- !u!1 &867839916
 GameObject:
   m_ObjectHideFlags: 0
