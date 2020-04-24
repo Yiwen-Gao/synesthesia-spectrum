@@ -4812,10 +4812,7 @@ MonoBehaviour:
   rotateLeftButton: 276
   rotateRightButton: 275
   controlTime: 5
-  player: {fileID: 5717123224357602468}
-  canRotateColor: {fileID: 2100000, guid: 75c82c82e50a0f143bcdba51a1c2d917, type: 2}
-  opponentControlColor: {fileID: 2100000, guid: 1befa46d08a31c14086df089ab86534f,
-    type: 2}
+  inControlSprite: {fileID: 2064897446}
 --- !u!4 &1957974623
 Transform:
   m_ObjectHideFlags: 0
@@ -4996,13 +4993,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1957974623}
     m_Modifications:
-    - target: {fileID: 6368571817003556064, guid: 5ab912d9642ef4fe7bf2e6c1f4e92915,
-        type: 3}
-      propertyPath: m_Text
-      value: 'Level 2
-
-'
-      objectReference: {fileID: 0}
     - target: {fileID: 6368571817049310809, guid: 5ab912d9642ef4fe7bf2e6c1f4e92915,
         type: 3}
       propertyPath: m_Name
@@ -5145,6 +5135,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2064897446 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7294984758067054051, guid: 5ab912d9642ef4fe7bf2e6c1f4e92915,
+    type: 3}
+  m_PrefabInstance: {fileID: 2064897442}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2080501408 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2356699101392603624, guid: fd6b4ced7e0304d888830ca7599944c9,
@@ -5407,9 +5403,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f757983d712b465e8dcfecec4e2d359, type: 3}
---- !u!23 &5717123224357602468 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 5717123224120908344, guid: 6f757983d712b465e8dcfecec4e2d359,
-    type: 3}
-  m_PrefabInstance: {fileID: 5717123224357602467}
-  m_PrefabAsset: {fileID: 0}

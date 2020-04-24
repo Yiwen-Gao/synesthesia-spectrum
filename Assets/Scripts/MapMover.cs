@@ -14,9 +14,8 @@ public class MapMover : MonoBehaviour {
     public KeyCode rotateLeftButton;
     public KeyCode rotateRightButton;
     public float controlTime = 5f;
-    public MeshRenderer player;
-    public Material canRotateColor;
-    public Material opponentControlColor;
+    //public MeshRenderer player;
+    public GameObject inControlSprite;
     private Vector3 startRotation;
     private float timer;
     private bool isRotating;
@@ -61,11 +60,13 @@ public class MapMover : MonoBehaviour {
                 }
                 isInControl = true;
             }
-            player.material = opponentControlColor;
+            inControlSprite.SetActive(false);
+            //player.material = opponentControlColor;
         }
         else
         {
-            player.material = canRotateColor;
+            inControlSprite.SetActive(true);
+            //player.material = canRotateColor;
         }
         if (Input.GetKeyDown(rotateRightButton) && CanRotate())
         {
