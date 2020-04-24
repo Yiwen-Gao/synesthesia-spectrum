@@ -870,6 +870,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1777990341}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1076222514 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7294984758067054051, guid: 5ab912d9642ef4fe7bf2e6c1f4e92915,
+    type: 3}
+  m_PrefabInstance: {fileID: 1860936512}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1123972227
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1751,13 +1757,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 864499350}
     m_Modifications:
-    - target: {fileID: 6368571817003556064, guid: 5ab912d9642ef4fe7bf2e6c1f4e92915,
-        type: 3}
-      propertyPath: m_Text
-      value: 'Level 1
-
-'
-      objectReference: {fileID: 0}
     - target: {fileID: 6368571817049310809, guid: 5ab912d9642ef4fe7bf2e6c1f4e92915,
         type: 3}
       propertyPath: m_Name
@@ -1866,6 +1865,11 @@ PrefabInstance:
     - target: {fileID: 6368571817049310813, guid: 5ab912d9642ef4fe7bf2e6c1f4e92915,
         type: 3}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7294984758067054051, guid: 5ab912d9642ef4fe7bf2e6c1f4e92915,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2221,6 +2225,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4750864336600945489, guid: c6ef1914b304edd41bac4604346c531c,
+        type: 3}
+      propertyPath: inControlSprite
+      value: 
+      objectReference: {fileID: 1076222514}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6ef1914b304edd41bac4604346c531c, type: 3}
 --- !u!1001 &4012828391272493363
