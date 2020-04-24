@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class WallVictoryCondition : MonoBehaviour
 {
     public static int score = 0;
     //Number of seconds when reloading the scene
-    private float restartDelay = 1f;
+    private float restartDelay = 2.5f;
     public string nextScene;
+    public Text playerStatusDisplay;
 
     private void Start()
     {
@@ -20,15 +22,14 @@ public class WallVictoryCondition : MonoBehaviour
                     Lose();
                 });
         }
+
+        playerStatusDisplay.enabled = false;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            //CMD line prompt when Player object collides with wall
-            Debug.Log("You won!");
-
             NetworkClient client = FindObjectOfType<NetworkClient>();
             if (client != null)
             {
@@ -36,30 +37,21 @@ public class WallVictoryCondition : MonoBehaviour
             }
 
             //Restart the game
-            //"Restart" is the method, and restartDelay will delay the method by restartDelay seconds.
-            Invoke("Restart", restartDelay);
             score++;
+            StartCoroutine(LoadNextScene(restartDelay, "You win!"));
         }
-    }
-
-    void Restart()
-    {
-        /*
-         * This line reloads the scene
-         * .GetActiveScene().name() gets the current scene level
-         * If we have other scenes, we can set this to load those scenes.
-         * Reference video https://youtu.be/VbZ9_C4-Qbo?t=481
-         * */
-
-        //SceneManager.GetActiveScene().name (restarts current scene)
-        SceneManager.LoadScene(nextScene);
-        
     }
 
     void Lose()
     {
-        Debug.Log("You lose");
+        StartCoroutine(LoadNextScene(restartDelay, "You lose!"));
+    }
 
+    IEnumerator LoadNextScene(float delay, string text) {
+        playerStatusDisplay.enabled = true;
+        playerStatusDisplay.text = text;
+
+        yield return new WaitForSeconds(delay);
         SceneManager.LoadScene(nextScene);
     }
 }
