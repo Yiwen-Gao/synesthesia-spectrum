@@ -258,7 +258,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   port: 13000
-  serverAddr: 104.175.171.88
+  serverAddr: 127.0.0.1
+  offlineMode: 0
+  firstLevel: Level 1 Integrated
 --- !u!1001 &390081324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -567,6 +569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 0
+  yPosition: 0
 --- !u!114 &798492123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -877,8 +880,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 90
-  Map: {fileID: 0}
+  rotationStates:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 90}
+  - {x: 0, y: 0, z: 180}
+  - {x: 0, y: 0, z: 270}
   rotationSpeed: 1.5
+  rotateLeftButton: 0
+  rotateRightButton: 0
+  controlTime: 5
+  inControlSprite: {fileID: 0}
 --- !u!4 &1347363858
 Transform:
   m_ObjectHideFlags: 0
