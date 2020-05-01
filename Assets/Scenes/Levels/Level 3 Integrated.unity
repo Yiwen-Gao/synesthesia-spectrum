@@ -36712,7 +36712,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 230150953}
     m_Modifications:
     - target: {fileID: -4216859302048453862, guid: ce34d26e0024c442ebd37b3c9779754e,
         type: 3}
@@ -36732,17 +36732,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: ce34d26e0024c442ebd37b3c9779754e,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ce34d26e0024c442ebd37b3c9779754e,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ce34d26e0024c442ebd37b3c9779754e,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ce34d26e0024c442ebd37b3c9779754e,
         type: 3}
@@ -54337,7 +54337,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1641113322}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.312, y: 0.285, z: -3.831}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -66223,7 +66223,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1978983826}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.26, y: -0.3, z: 4.524}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -71860,6 +71860,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 7606316694367999733, guid: 4bd0ad644b947406ead420f5b880ab74,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 68730aa47d5f772419293c966c0e1e8c, type: 2}
     m_RemovedComponents:
     - {fileID: 7101120174746360219, guid: 4bd0ad644b947406ead420f5b880ab74, type: 3}
     - {fileID: 4465246726102221703, guid: 4bd0ad644b947406ead420f5b880ab74, type: 3}
