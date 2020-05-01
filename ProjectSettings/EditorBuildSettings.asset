@@ -18,18 +18,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level 3 Integrated.unity
     guid: 9ad222a0577a28c40912f3245cf3de6c
   - enabled: 1
+    path: Assets/Scenes/Levels/Level 4 Integrated.unity
+    guid: 6066a4ae847c34d45a6c0d6b422a86d8
+  - enabled: 1
     path: Assets/Scenes/UI Scenes/LoserScene.unity
     guid: f807f896a8177a042a071b66142d5953
   - enabled: 1
     path: Assets/Scenes/UI Scenes/VictoryScene.unity
     guid: 1378a2fd896fb104e958010066f6f2ca
-  - enabled: 1
-    path: Assets/Scenes/Levels/Level1.unity
-    guid: 25dbfc46006c510408dfcbf21c3d071d
-  - enabled: 1
-    path: Assets/Scenes/Levels/Level3.unity
-    guid: 72307fbd805626b47b0e213b9185ac46
-  - enabled: 1
-    path: Assets/Scenes/Levels/Level4.unity
-    guid: 6066a4ae847c34d45a6c0d6b422a86d8
   m_configObjects: {}
