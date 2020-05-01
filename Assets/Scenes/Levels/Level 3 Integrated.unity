@@ -70104,6 +70104,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 7606316694367999733, guid: 4bd0ad644b947406ead420f5b880ab74,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 68730aa47d5f772419293c966c0e1e8c, type: 2}
     m_RemovedComponents:
     - {fileID: 7101120174746360219, guid: 4bd0ad644b947406ead420f5b880ab74, type: 3}
     - {fileID: 4465246726102221703, guid: 4bd0ad644b947406ead420f5b880ab74, type: 3}
