@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class StartTextController : MonoBehaviour
 {
-    public Text levelDisplay;
+    public TextMeshProUGUI levelDisplay;
 	public float duration;
 	private float startTime;
     

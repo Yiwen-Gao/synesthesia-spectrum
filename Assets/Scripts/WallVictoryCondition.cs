@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class WallVictoryCondition : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class WallVictoryCondition : MonoBehaviour
     //Number of seconds when reloading the scene
     private float restartDelay = 2.5f;
     public string nextScene;
-    public Text playerStatusDisplay;
+    public TextMeshProUGUI playerStatusDisplay;
 
     private void Start()
     {
