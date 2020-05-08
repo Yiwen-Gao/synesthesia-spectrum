@@ -1,0 +1,11 @@
+C:\Users\bbrav\Documents\synesthesia_server\SynesthesiaServer\SynesthesiaServer\bin\Release\netcoreapp3.1\SynesthesiaServer.exe
+C:\Users\bbrav\Documents\synesthesia_server\SynesthesiaServer\SynesthesiaServer\bin\Release\netcoreapp3.1\SynesthesiaServer.deps.json
+C:\Users\bbrav\Documents\synesthesia_server\SynesthesiaServer\SynesthesiaServer\bin\Release\netcoreapp3.1\SynesthesiaServer.runtimeconfig.json
+C:\Users\bbrav\Documents\synesthesia_server\SynesthesiaServer\SynesthesiaServer\bin\Release\netcoreapp3.1\SynesthesiaServer.runtimeconfig.dev.json
+C:\Users\bbrav\Documents\synesthesia_server\SynesthesiaServer\SynesthesiaServer\bin\Release\netcoreapp3.1\SynesthesiaServer.dll
+C:\Users\bbrav\Documents\synesthesia_server\SynesthesiaServer\SynesthesiaServer\bin\Release\netcoreapp3.1\SynesthesiaServer.pdb
+C:\Users\bbrav\Documents\synesthesia_server\SynesthesiaServer\SynesthesiaServer\obj\Release\netcoreapp3.1\SynesthesiaServer.csprojAssemblyReference.cache
+C:\Users\bbrav\Documents\synesthesia_server\SynesthesiaServer\SynesthesiaServer\obj\Release\netcoreapp3.1\SynesthesiaServer.AssemblyInfoInputs.cache
+C:\Users\bbrav\Documents\synesthesia_server\SynesthesiaServer\SynesthesiaServer\obj\Release\netcoreapp3.1\SynesthesiaServer.AssemblyInfo.cs
+C:\Users\bbrav\Documents\synesthesia_server\SynesthesiaServer\SynesthesiaServer\obj\Release\netcoreapp3.1\SynesthesiaServer.dll
+C:\Users\bbrav\Documents\synesthesia_server\SynesthesiaServer\SynesthesiaServer\obj\Release\netcoreapp3.1\SynesthesiaServer.pdb

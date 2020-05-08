@@ -172,8 +172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5529ff94f144d73a7084c9a59db45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  singlePlayerScene: 
-  multiPlayerScene: Level 1 Integrated
+  singlePlayerScene: Level 1 Integrated
+  multiPlayerScene: Network Connect
 --- !u!1 &183674894
 GameObject:
   m_ObjectHideFlags: 0
