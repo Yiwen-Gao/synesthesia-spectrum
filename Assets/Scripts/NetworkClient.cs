@@ -20,13 +20,13 @@ public class NetworkClient : MonoBehaviour
 
     private Dictionary<string, Action<string>> callbacks = new Dictionary<string, Action<string>>();
 
-    public bool offlineMode = false;
+    public bool offlineMode;
 
     public string firstLevel;
     private int playerNum = 1;
 
     // Start is called before the first frame update
-    void Awake()
+    public void StartGame()
     {
         if (FindObjectsOfType<NetworkClient>().Length > 1)
         {
