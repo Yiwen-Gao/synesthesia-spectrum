@@ -5,14 +5,13 @@ using UnityEngine;
 public class Swim : MonoBehaviour
 {
     public float loopTime = 5;
-    public Vector3 center;
+    public GameObject center;
     private float radius;
     private float currTime;
 
     private void Start()
     {
-        center.y = transform.position.y;
-        radius = (transform.position - center).magnitude;
+        radius = (transform.position - center.transform.position).magnitude;
         currTime = loopTime;
     }
 
@@ -24,7 +23,11 @@ public class Swim : MonoBehaviour
         {
             currTime -= loopTime;
         }
-        transform.position = center + radius * new Vector3(Mathf.Cos(2 * Mathf.PI * currTime / loopTime), 0, Mathf.Sin(2*Mathf.PI * currTime / loopTime));
-        transform.LookAt(center);
+        float theta = 2 * Mathf.PI * currTime / loopTime;
+        Vector3 offset = radius * new Vector3(Mathf.Cos(theta), 0, Mathf.Sin(theta));
+        offset = center.transform.rotation * offset;
+        transform.position = center.transform.position + offset;
+        transform.LookAt(center.transform.position);
+        transform.rotation = transform.rotation * center.transform.rotation;
     }
 }
