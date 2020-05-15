@@ -131,7 +131,7 @@ PrefabInstance:
     - target: {fileID: 268493535217381514, guid: fd6b4ced7e0304d888830ca7599944c9,
         type: 3}
       propertyPath: m_Name
-      value: External Wall (2)
+      value: Wall 3
       objectReference: {fileID: 0}
     - target: {fileID: 268493535217381514, guid: fd6b4ced7e0304d888830ca7599944c9,
         type: 3}
@@ -3431,7 +3431,7 @@ PrefabInstance:
     - target: {fileID: 268493535217381514, guid: fd6b4ced7e0304d888830ca7599944c9,
         type: 3}
       propertyPath: m_Name
-      value: External Wall (1)
+      value: Wall 1
       objectReference: {fileID: 0}
     - target: {fileID: 268493535217381514, guid: fd6b4ced7e0304d888830ca7599944c9,
         type: 3}
@@ -4013,7 +4013,7 @@ PrefabInstance:
     - target: {fileID: 268493535217381514, guid: fd6b4ced7e0304d888830ca7599944c9,
         type: 3}
       propertyPath: m_Name
-      value: External Wall
+      value: Wall 2
       objectReference: {fileID: 0}
     - target: {fileID: 268493535217381514, guid: fd6b4ced7e0304d888830ca7599944c9,
         type: 3}
@@ -6764,7 +6764,7 @@ PrefabInstance:
     - target: {fileID: 268493535217381514, guid: fd6b4ced7e0304d888830ca7599944c9,
         type: 3}
       propertyPath: m_Name
-      value: External Wall (3)
+      value: Wall 4
       objectReference: {fileID: 0}
     - target: {fileID: 268493535217381514, guid: fd6b4ced7e0304d888830ca7599944c9,
         type: 3}
