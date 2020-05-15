@@ -131,7 +131,7 @@ PrefabInstance:
     - target: {fileID: 268493535217381514, guid: fd6b4ced7e0304d888830ca7599944c9,
         type: 3}
       propertyPath: m_Name
-      value: External Wall (2)
+      value: Wall 3
       objectReference: {fileID: 0}
     - target: {fileID: 268493535217381514, guid: fd6b4ced7e0304d888830ca7599944c9,
         type: 3}
@@ -2387,6 +2387,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5ee514231259c94c8ad3dc9b87f45d0, type: 3}
+--- !u!1 &780995133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 780995134}
+  m_Layer: 0
+  m_Name: fish3-center
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &780995134
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780995133}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.258, y: 0.13, z: 3.2289999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1957974623}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &831014211 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: f8fe152ff4d474b2caca478daddd3e2f,
@@ -3401,7 +3431,7 @@ PrefabInstance:
     - target: {fileID: 268493535217381514, guid: fd6b4ced7e0304d888830ca7599944c9,
         type: 3}
       propertyPath: m_Name
-      value: External Wall (1)
+      value: Wall 1
       objectReference: {fileID: 0}
     - target: {fileID: 268493535217381514, guid: fd6b4ced7e0304d888830ca7599944c9,
         type: 3}
@@ -3983,7 +4013,7 @@ PrefabInstance:
     - target: {fileID: 268493535217381514, guid: fd6b4ced7e0304d888830ca7599944c9,
         type: 3}
       propertyPath: m_Name
-      value: External Wall
+      value: Wall 2
       objectReference: {fileID: 0}
     - target: {fileID: 268493535217381514, guid: fd6b4ced7e0304d888830ca7599944c9,
         type: 3}
@@ -6294,6 +6324,91 @@ Transform:
   m_Father: {fileID: 1957974623}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1899868681
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1957974623}
+    m_Modifications:
+    - target: {fileID: 2042093347469995579, guid: bc2c9443755d6ca439c75606cc2a82f6,
+        type: 3}
+      propertyPath: loopTime
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 2042093347469995579, guid: bc2c9443755d6ca439c75606cc2a82f6,
+        type: 3}
+      propertyPath: center
+      value: 
+      objectReference: {fileID: 780995133}
+    - target: {fileID: 6172291565083144207, guid: bc2c9443755d6ca439c75606cc2a82f6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.253
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172291565083144207, guid: bc2c9443755d6ca439c75606cc2a82f6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172291565083144207, guid: bc2c9443755d6ca439c75606cc2a82f6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172291565083144207, guid: bc2c9443755d6ca439c75606cc2a82f6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172291565083144207, guid: bc2c9443755d6ca439c75606cc2a82f6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172291565083144207, guid: bc2c9443755d6ca439c75606cc2a82f6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172291565083144207, guid: bc2c9443755d6ca439c75606cc2a82f6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172291565083144207, guid: bc2c9443755d6ca439c75606cc2a82f6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172291565083144207, guid: bc2c9443755d6ca439c75606cc2a82f6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172291565083144207, guid: bc2c9443755d6ca439c75606cc2a82f6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172291565083144207, guid: bc2c9443755d6ca439c75606cc2a82f6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7202165791863423516, guid: bc2c9443755d6ca439c75606cc2a82f6,
+        type: 3}
+      propertyPath: m_Name
+      value: fish3-swimming
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bc2c9443755d6ca439c75606cc2a82f6, type: 3}
+--- !u!4 &1899868682 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6172291565083144207, guid: bc2c9443755d6ca439c75606cc2a82f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1899868681}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1919414143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6476,6 +6591,8 @@ Transform:
   - {fileID: 57463115}
   - {fileID: 1896727691}
   - {fileID: 742510744}
+  - {fileID: 1899868682}
+  - {fileID: 780995134}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6647,7 +6764,7 @@ PrefabInstance:
     - target: {fileID: 268493535217381514, guid: fd6b4ced7e0304d888830ca7599944c9,
         type: 3}
       propertyPath: m_Name
-      value: External Wall (3)
+      value: Wall 4
       objectReference: {fileID: 0}
     - target: {fileID: 268493535217381514, guid: fd6b4ced7e0304d888830ca7599944c9,
         type: 3}
