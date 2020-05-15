@@ -13,11 +13,8 @@ public class GameOver : MonoBehaviour
     void Start()
     {
         SceneDisplay.enabled = true;
-        SceneDisplay.text = WallVictoryCondition.score.ToString();
-   
-       
+        SceneDisplay.text = "Congratulations, You Won!\n\nYour Score: " +  WallVictoryCondition.score.ToString();
     }
-
     // Update is called once per frame
     void Update()
     {
