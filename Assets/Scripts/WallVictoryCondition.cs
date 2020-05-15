@@ -45,7 +45,7 @@ public class WallVictoryCondition : MonoBehaviour
 
     void Lose()
     {
-        StartCoroutine(LoadNextScene(restartDelay, "You lose!"));
+        StartCoroutine(LoadNextScene(0, "You lose!"));
     }
 
     IEnumerator LoadNextScene(float delay, string text) {
