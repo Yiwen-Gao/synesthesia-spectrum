@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   port: 13000
-  serverAddr: 104.175.171.88
-  offlineMode: 1
+  serverAddr: 76.95.226.196
+  offlineMode: 0
   firstLevel: Level 1 Integrated
