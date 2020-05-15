@@ -28,12 +28,12 @@ public class Swim : MonoBehaviour
         offset = center.transform.rotation * offset;
         transform.position = center.transform.position + offset;
         transform.LookAt(center.transform.position);
-        transform.rotation = transform.rotation * center.transform.rotation;
         Vector3 rotate = transform.rotation.eulerAngles;
         if (rotate.x > 1 && rotate.y < 181 && rotate.y > 179)
         {
             rotate.y = 180 - rotate.y;
             transform.Rotate(new Vector3(180, 180, 0));
         }
+        transform.rotation = transform.rotation * center.transform.rotation;
     }
 }
